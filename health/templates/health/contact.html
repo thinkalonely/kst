@@ -4,6 +4,7 @@
 {% load staticfiles %}
 {% block style %}
 <link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
 {% endblock %}
 <!-- head部分结束 -->
 
@@ -72,8 +73,10 @@
             <div class="news w1200">
                 <div class="con">
                     <dl class="hot">
-                        <dt><a href="#"><img src='{% static "health/images/ditu.png" %}'></a></dt>
+                        <div style="width:697px;height:432px;border:#ccc solid 1px;" id="dituContent"></div>
+                        <script type="text/javascript" src="{% static 'health/js/map.js' %}"></script>
                     </dl>
+
                     <div class="news-list">
                         <ul>
                             {% for item in contact_list %}
