@@ -1,4 +1,3 @@
-from django.contrib import admin
 import xadmin
 from .models import Article, Industry
 
