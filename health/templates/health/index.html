@@ -1,0 +1,97 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+<!-- 加载static文件路径 -->
+{% load staticfiles %}
+<!-- 页面标题 -->
+<!-- 默认 -->
+<!-- 站点描述 -->
+{% block description %}
+<meta name="description" content="四川易迅通健康技术发展有限公司，专注于为政府基层医疗卫生和医养提供平台级协同运营服务。公司定位为做区域政府医疗卫生协同服务、养老协同服务和连锁医疗机构服务的建设者和运营者。无论您在家里，在公司，在路上，如遇健康问题，拿起手机，即可开启您的健康之旅！医总管服务热线：028-87770007" />
+{% endblock %}
+<!-- 页面样式 -->
+{% block style %}
+<script src="{% static 'health/js/jquery-1.12.1.min.js' %}"></script>
+<script src="{% static 'health/js/index_banner.js' %}"></script>
+{% endblock %}
+<!----- web 主体 ----->
+<!-- banner -->
+{% block banner %}
+        <div class="img">
+            <ul id="pic">
+                <li style="display:block"><img src='{% static "health/images/banner01.jpg"%}'  alt=""  ></li>
+                <li><img src='{% static "health/images/banner02.jpg"%}' alt="" ></li>
+                <li><img src='{% static "health/images/banner03.jpg"%}' alt=""></li>
+            </ul>
+            <ul id="num">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+{% endblock %}
+
+{% block intro-title %}
+            <div class="icon"></div>
+            <div class="title">我们提供</div>
+            <div class="sub-title">We provide</div>
+{% endblock %}
+
+{% block intro-content %}
+
+<div class="float provide-box">
+{% for item in provide_list %}
+<div class="left provide-item">
+    <div class="icon left">
+        <img src="{% static item.provide_image %}"/>
+    </div>
+    <div class="intro left">
+        <div class="text-title">{{ item.provide_title }}</div>
+        <div class="text-ct">{{ item.provide_text }}</div>
+    </div>
+</div>
+{% endfor %}
+</div>
+{% endblock %}
+
+{% block video-box %}
+<div class="video-box">
+    <div class="intro-title">
+        <div class="icon"><img src='{% static "health/images/icon-tianshi.png" %}'></div>
+        <div class="title">让“一站式”家庭医生健康管家服务成为中国每一个家庭的必需品</div>
+    </div>
+    <div class="intro-content">
+        <div class="desc">四川易迅通健康技术发展有限公司，专注于为政府基层医疗卫生服务和医养服务提供平台级协同运营服务。公司定位为做区域政府医疗卫生协同服务、养老协同服务和连锁医疗机构服务的建设者和运营者。无论您在家里，在公司，在路上，如遇健康问题，拿起手机，就可立即开启您的健康之旅！
+        </div>
+        <div class="video">
+            <video src='{% static "health/images/wenjiang_video.mp4" %}' width="900px" height="500px" controls autoplay >
+            </video>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block service-box %}
+<div class="intro-box" style="background-color: #fff;">
+    <div class="intro-title">
+        <div class="icon"><img src='{% static "health/images/icon-xin.png" %}'></div>
+        <div class="title">服务体系</div>
+        <div class="sub-title">Service system</div>
+    </div>
+    <div class="intro-content">
+        <div class="float together-box">
+            {% for item in service_list %}
+            <div class="left service-item">
+                <div class="icon">
+                    <img src="{% static item.image %}"/>
+                </div>
+                <div class="intro">
+                    <div class="text-title">{{ item.title }}</div>
+                    <div class="line"></div>
+                    <div class="text-ct">{{ item.text }}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

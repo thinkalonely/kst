@@ -1,0 +1,73 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+{% load staticfiles %}
+<!-- description -->
+{% block description %}
+<meta name="description" content="以居家为基础、社区为依托、机构为支撑的养老服务体系，让一站式健康养老管家式服务成为中国每一个家庭的必须品！">
+{% endblock %}
+<!-- style -->
+{% block style %}
+<link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+<style>
+    .intro-box,
+     .intro-title {
+        padding: 0;
+    }
+</style>
+{% endblock %}
+<!--------- 主体部分 --------->
+{% block banner %}
+    <div class="img">
+        <img src="{% static 'health/images/banner02.jpg' %}" alt=""  >
+    </div>
+{% endblock %}
+<!----- 内容 ----->
+{% block intro-content %}
+<div class="msg_box_left float">
+        <div class="main">
+            <div class="left words">
+                <div class="title">多种服务 无缝对接</div>
+                <div class="msg">整合医疗卫生和养老资源，实现居家养老、医疗健康、生活照料联动服务，实现老人生活健康无缝对接。</div>
+            </div>
+            <div class="left images1">
+                <img src="{% static 'health/images/tu1.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="msg_box_right float">
+        <div class="main">
+            <div class="left images">
+                <img src="{% static 'health/images/tu2.png' %}" alt="">
+            </div>
+            <div class="left words">
+                <div class="title" style="width:400px;">多频互动、全面协同</div>
+                <div class="msg">智慧养老平台创建了医总管、居民、第三方机构之间互动的新模式，打造一站式居民居家养老协同服务机制，实现医总管管理、老人评价和效果评估，为老人提供更便捷、更高效的医疗养老健康服务。</div>
+            </div>
+        </div>
+    </div>
+    <div class="msg_box_left float">
+        <div class="main">
+            <div class="left words">
+                <div class="title">足不出户  悠享生活</div>
+                <div class="msg">以老人为中心，尊重每位老人感知，用心服务。老人打开电视，通过医总管就可选择服务，并在线对服务进行评价，足不出户在家悠享生活。
+                </div>
+            </div>
+            <div class="left images1">
+                <img src="{% static 'health/images/tu3.png' %}" alt="">
+            </div>
+        </div>
+    </div>
+    <div class="msg_box_right float" >
+        <div class="main">
+            <div class="left images">
+                <img src="{% static 'health/images/tu4.png' %}" alt="">
+            </div>
+            <div class="left words">
+                <div class="title" style="width:400px;">呼叫服务，及时接应</div>
+                <div class="msg">
+                    专业的电话视频协同呼叫服务，一点接应，多点服务，多点支撑的标准化服务执行和流程化管理，实现服务质量的有效管理把控。
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

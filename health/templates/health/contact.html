@@ -1,0 +1,114 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+<!-- head部分开始 -->
+{% load staticfiles %}
+{% block style %}
+<link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+{% endblock %}
+<!-- head部分结束 -->
+
+<!-- 主体部分 -->
+{% block banner %}
+    <div class="img">
+        <img src="{% static 'health/images/banner05.jpg' %}" alt=""  >
+    </div>
+{% endblock %}
+
+{% block intro-title %}
+        <div class="icon"></div>
+        <div class="title">关于我们</div>
+        <div class="sub-title">About us</div>
+        <div class="msg2">
+              <p>四川易迅通健康医疗技术发展有限公司专注于 “互联网+”分级诊疗及家庭医生签约、</p>
+              <p>居家养老医养结合、实体连锁医疗机构的建设和运营。目前，已汇聚了全国11个省、26个地方、160个区县的协同服务，与政府、各级医疗机构、通信运营商共建大健康生态圈</p>
+        </div>
+{% endblock %}
+
+{% block intro-content %}
+            <div class="float provide-box">
+                    <div class="left provide-item">
+                        <div class="icon left">
+                            <img src='{% static "health/images/location.png" %}'/>
+                        </div>
+                        <div class="intro left">
+                            <div class="text-title">企业定位</div>
+                            <div class="rrr">医疗健康生态圈的运营商和建设商。</div>
+                            <div class="text-ct"></div>
+                        </div>
+                    </div>
+                    <div class="left provide-item">
+                        <div class="icon left">
+                            <img src='{% static "health/images/objective.png" %}'/>
+                        </div>
+                        <div class="intro left">
+                            <div class="text-title">企业目标</div>
+
+                            <div class="rrr">让“一站式”家庭医生健康管家服务成为中国每一个家庭的必需品。</div>
+                            <div class="text-ct">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="left provide-item">
+                        <div class="icon left">
+                            <img src='{% static "health/images/yuanjing.png" %}'/>
+                        </div>
+                        <div class="intro left">
+                            <div class="text-title">企业愿景</div>
+
+                            <div class="rrr">让医疗健康触手可及。</div>
+                            <div class="text-ct"></div>
+                        </div>
+                    </div>
+            </div>
+{% endblock %}
+
+{% block service-box %}
+<div class="intro-box">
+        <div class="intro-title">
+            <div class="icon"></div>
+            <div class="title">联系我们</div>
+            <div class="sub-title">contact us</div>
+
+            <div class="news w1200">
+                <div class="con">
+                    <dl class="hot">
+                        <dt><a href="#"><img src='{% static "health/images/ditu.png" %}'></a></dt>
+                    </dl>
+                    <div class="news-list">
+                        <ul>
+                            {% for item in contact_list %}
+                            <li>
+                                <div class="text float">
+                                    <div class="left"><img src='{% static "health/images/dianhua.png" %}' alt=""></div>
+                                    <div class="left titlep"><p>电话热线：{{ item.contact_phone }}</p></div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="text float">
+                                    <div class="left"><img src='{% static "health/images/youjian.png" %}' alt=""></div>
+                                    <div class="left titlep">
+                                      <p>公司邮箱：{{ item.contact_email }}</p></div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="text float">
+                                    <div class="left"><img src='{% static "health/images/youbian.png" %}' alt=""></div>
+                                    <div class="left titlep"><p>邮政编码：{{ item.zip_code }}</p></div>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="text float">
+                                    <div class="left"><img src='{% static "health/images/dizhi.png" %}'  alt=""></div>
+                                    <div class="left titlep"><p>公司地址：{{ item.contact_address }}</p></div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+{% endblock %}

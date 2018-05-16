@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <!-- title -->
+    <title>{% block title %}四川易迅通健康医疗技术发展有限公司{% endblock %}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="Keywords" content="四川易迅通、家庭医签约、分级诊疗、居家养老、医总管、新闻资讯" />
+    <!-- description -->
+    {% block description %}
+    <meta name="description" content=""/>
+    {% endblock %}
+    <!-- 载入静态文件 -->
+    {% load staticfiles %}
+    <link rel="icon" href="{% static 'health/favicon.ico' %}" type="image/gif">
+    <link rel="stylesheet" href='{% static "health/css/common.css" %}'>
+    <link rel="stylesheet" href="{% static 'health/css/index.css' %}"/>
+    {% block style %}
+    <!-- some style include css js -->
+    {% endblock %}
+</head>
+<body>
+
+<div class="header" id="top">
+    <div class="header-content">
+        <div class="float">
+            <div class="left">
+                <div class="logo">
+                    <a href="/" title="四川易迅通健康医疗技术发展有限公司"><span class="icon"></span></a>
+                </div>
+            </div>
+            <div class="right">
+                <div class="nav-menu">
+                    <a href="/" ><strong>首页</strong></a>
+                    <a href="/doctor"><strong>家庭医生</strong></a>
+                    <a href="/pension"><strong>医养结合</strong></a>
+                    <a href="/news"><strong>新闻资讯</strong></a>
+                    <a href="/contact"><strong>联系我们</strong></a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div class="content">
+    <div class="banner">
+        <!-- banner image -->
+        {% block banner %}
+        {% endblock %}
+    </div>
+
+    <div class="intro-box">
+        <div class="intro-title">
+            <!-- intro-title -->
+            {% block intro-title %}
+            {% endblock %}
+        </div>
+        <div class="intro-content">
+            <!-- intro-items -->
+            {% block intro-content %}
+            {% endblock %}
+        </div>
+    </div>
+    {% block video-box %}
+    {% endblock %}
+
+    {% block service-box %}
+    {% endblock %}
+</div>
+
+<div class="footer">
+    <div class="float">
+        <div class="left">
+            <div class="phone">
+                <div class="phone_number_box">
+                    <span class="phone_icon"></span>
+                    <span class="phone_number">028-87770007</span>
+                </div>
+                <div class="supervision_number_box">
+                    <span class="phone_name">医总管服务热线</span>
+                </div>
+            </div>
+            <div class="msg">
+                <span>技术支持 丨 易迅通健康云  丨 蜀ICP备15005763号-1 丨 经营许可证号：川B2-20150184</span>
+            </div>
+        </div>
+        <div class="right">
+            <img src='{% static "health/images/app_android.png" %}'>
+            <img src='{% static "health/images/app_ios.png" %}'>
+        </div>
+        <div class="go_top_btn">
+            <a href="#top" class="go_top" title="返回顶部"></a>
+        </div>
+    </div>
+    <div class="bar"><span></span></div>
+</div>
+</body>
+</html>

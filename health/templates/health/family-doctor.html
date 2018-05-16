@@ -1,0 +1,148 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+{% load staticfiles %}
+<!-- title -->
+{% block title %}家庭医生签约{% endblock %}
+<!-- description -->
+{% block description %}
+<meta name="description" content="家庭医生是居民健康服务的第一责任人，是基层社区服务中心的全科医生、上级医院的专科医生和三甲医院医学专家组成的团队，为签约居民提供个性化医疗和健康管理服务" />
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+{% endblock %}
+
+<!-- 主体部分 -->
+{% block banner %}
+        <div class="img">
+            <img src="{% static 'health/images/banner03.jpg' %}" alt=""  >
+        </div>
+{% endblock %}
+<!-- intro box -->
+
+{% block intro-title %}
+<div class="icon"></div>
+<div class="title">
+    <p>家庭医生  </p>
+    <p>The family doctor</p>
+</div>
+<div class="msg2">
+    <p>我们一直在努力，整合各级医疗机构及医生资源，</p>
+    <p> 探索实现“大病进医院，小病在社区，康复回社区”的就医模式，促进基本医疗的公平可及。</p>
+</div>
+{% endblock %}
+
+{% block intro-content %}
+    <div class="float provide-box">
+        {% for item in people_list %}
+        <div class="left provide-item ttt">
+            <div class="icon left">
+                <img src="{% static item.image %}"/>
+            </div>
+            <div class="intro left">
+                <div class="text-title" style="text-align: left">{{ item.people }}</div>
+                <div class="text-ct"></div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block service-box %}
+<div class="intro-box" style="background-color: #f3f8fb;padding: 40px 0;">
+    <div class="intro-box">
+        <div class="intro-title">
+            <div class="title">“互联网+”分级诊疗及家庭医生签约协同服务平台</div>
+        </div>
+        <div class="intro-content">
+            <div class="float together-box">
+                <div class="left service-item">
+                    <div class="icon">
+                        <img src="{% static '/health/images/img-07.png' %}"/>
+                    </div>
+                    <div class="intro">
+                        <div class="text-title">家庭医生签约服务系统</div>
+                        <div class="line"></div>
+                        <div class="text-ct">线上下线签约，解决医患互动难题，实现医患互动零距离、智能化。
+                        </div>
+                    </div>
+                </div>
+                <div class="left service-item">
+                    <div class="icon">
+                        <img src="{% static '/health/images/img-08.png' %}"/>
+                    </div>
+                    <div class="intro">
+                        <div class="text-title">双向转诊服务系统</div>
+                        <div class="line"></div>
+                        <div class="text-ct" style="width:300px">提高医医互动质量，实现基层首诊、双向转诊、急慢分治、上下联动的医疗服务。</div>
+                    </div>
+                </div>
+                <div class="left service-item">
+                    <div class="icon">
+                        <img src="{% static '/health/images/img-09.png' %}"/>
+                    </div>
+                    <div class="intro">
+                        <div class="text-title">电话视频协同呼叫系统</div>
+                        <div class="line"></div>
+                        <div class="text-ct">一点受理、多点支撑的电话视频协同服务，实现医患互动、医医互动、机构与机构的互动交流。</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+        <div class="intro-box">
+
+            <div class="intro-box">
+                <div class="intro-title">
+                    <div class="title">一站式 全流程标准化协同运营服务</div>
+                    <div class="sub-title">诊前、诊中、诊后</div>
+                </div>
+                <div class="msg_box_right float bgc" style="padding: 20px 0;background: url('')">
+                    <div class="main">
+                        <div class="left images">
+                            <img src='{% static "health/images/fuwupingtai-img-02.png" %}' alt="">
+                        </div>
+                        <div class="left words">
+                            <div>
+                                <div class="title3">基层首诊</div>
+                                <div class="msg yyy">通过家庭医生签约服务，实现群众自愿针对常见病、多发病首先到基层医疗卫生机构就诊，突出家庭医生健康“守门人”的作用。</div>
+                                <div class="title3">双向转诊</div>
+                                <div class="msg yyy">超出家庭医生服务能力的疾病，由家庭医生为患者提供转诊服务。实现患者转的上去，接的回来，“小病在社区，大病到医院，康复回社区”。</div>
+                                <div class="title3">急慢分治</div>
+                                <div class="msg yyy">常见病多发病到基层医疗卫生机构就诊，急病去上级医院就诊，通过家庭医生有效分流患者。 </div>
+                                <div class="title3">上下联动</div>
+                                <div class="msg yyy">通过医联体的建设，实现上级医疗机构的医疗资源有效支撑家庭医生团队的服务。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="intro-title">
+                <div class="icon"></div>
+            </div>
+            <div class=""></div>
+        </div>
+<div class="intro-box">
+        <div class="intro-title" style="background-color: #f3f8fb">
+            <div class="icon"></div>
+            <div class="title">我们的优势</div>
+            <div class="sub-title">Our advantage</div>
+        </div>
+        <div class=" intro-content float "  style="padding: 50px 0 50px 0">
+            {% for item in advantage %}
+            <div class="left">
+                <div class="main">
+                <div class="tubiao left">
+                    <div>
+                        <img src="{% static item.image %}" alt="">
+                    </div>
+                    <div style="text-align: center"><span>{{ item.advantage }}</span></div>
+                </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

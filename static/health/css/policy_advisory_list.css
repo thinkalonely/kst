@@ -1,0 +1,189 @@
+.rukou{color: #ffffff;}
+{
+  overflow: hidden;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+/*----- nav ------*/
+.content .nav_bar {
+  height: 50px;
+  background: #f3f8fb;
+}
+ .nav {
+  width: 1200px;
+  margin: auto;
+  position: relative;
+}
+ .nav .wrap {
+	width: 200px;
+	border: 1px solid #dadada;
+	position: absolute;
+	top: 50px;
+	-webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+}
+ .nav .nav_top {
+  width: 200px;
+  height: 20px;
+  position: absolute;
+  top: -10px;
+  background: url("../images/zhengcezixunxiangqing_01.png");
+}
+ .nav .nav_menu {
+  width: 180px;
+  background: #ffffff;
+  padding: 20px 10px 10px 10px;
+  border-bottom: 1px dashed #999999;
+}
+ .nav ul {
+  list-style: none;
+}
+.nav a {
+  display: block;
+  padding: 0 0 0 24px;
+  height: 50px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #333333;
+}
+.nav  a.hover,
+.nav  a:hover {
+	color: #fff;
+	background-color: #325EB7;
+}
+ .nav .nav_bottom {
+  padding: 25px 10px 10px 10px;
+}
+ .nav .icon {
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	background: url("../images/zhengcezixunxiangqing_02.png") no-repeat;
+	padding: 0 5px 0 0;
+}
+ .nav .phone_number {
+	padding: 10px 0 0 24px;
+}
+.nav .nav_bottom div .icon-1 {
+	background: url("../images/logo-yizongguan.png")
+	no-repeat;
+	display: inline-block;
+	height: 18px;
+	width: 19px;
+	padding: 0 5px 0 0;
+}
+.nav .nav_bottom .fuwurexian {
+	border: 2px solid #CCC;
+}
+
+.nav .nav_bottom .yizongguan {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+	/* [disabled]margin: 8px; */
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+.nav .nav_bottom .yizongguan-1 {
+	height: 68px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+/*----- article-lists -----*/
+ .list-box {
+	margin: 0 auto;
+    height: 760px;
+	width: 965px;
+	padding: 0 0 0 235px;
+}
+.list-box .policy_advisory-box {
+  padding: 20px 0 0 0;
+  font-family: "Microsoft YaHei", sans-serif;
+}
+.list-box .policy_advisory-item {
+  padding: 20px 0;
+  border-bottom: 1px solid #e6e6e6;
+}
+.list-box img {
+  width: 200px;
+  height: 120px;
+}
+.list-box .policy_advisory-info {
+  padding: 0 0 0 20px;
+  width: 718px;
+}
+.list-box .policy_advisory-name {
+  font-size: 18px;
+  color: #333333;
+}
+.list-box .policy_advisory-desc {
+  padding: 10px 0;
+  line-height: 24px;
+  font-size: 14px;
+  color: #666666;
+}
+.list-box .policy_advisory-date {
+  line-height: 24px;
+  font-size: 14px;
+  color: #999999;
+}
+.list-box span {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+}
+.list-box span.num {
+  padding: 0 0 0 30px;
+  background: url("../images/icon-view-num.png") no-repeat 5px 6px;
+}
+.list-box .policy_advisory-page {
+  padding: 30px 0 80px 0;
+}
+/*----- pagination ------*/
+.industry-page {
+
+	padding: 30px 0px 20px 0px;
+}
+.page_control {
+    text-align: right;
+}
+.page_control a {
+  display: inline-block;
+  *display: inline;
+  *zoom: 1;
+  font-size: 13px;
+  color: #ffffff;
+  padding: 4px 10px;
+  border: 1px solid #b2b2b2;
+  background: -webkit-linear-gradient(top, #d4d4d4, #aaaaaa);
+  /*
+  filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#d4d4d4, endColorStr=#aaaaaa);
+  background: -ms-linear-gradient(top, #d4d4d4, #aaaaaa);
+  background: -moz-linear-gradient(top, #d4d4d4, #aaaaaa);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#d4d4d4), to(#aaaaaa));
+  background: -webkit-linear-gradient(top, #d4d4d4, #aaaaaa);
+  background: -o-linear-gradient(top, #d4d4d4, #aaaaaa);
+  -webkit-box-shadow: inset 0 0 2px 0 #ffffff;
+  -moz-box-shadow: inset 0 0 2px 0 #ffffff;
+  box-shadow: inset 0 0 2px 0 #ffffff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;*/
+  border-radius: 4px;
+}
+.page_control a:hover,
+.page_control a.hover {
+  border: 1px solid #ef9c9c;
+  background: -webkit-linear-gradient(top, #ffa7a7, #eb9999);
+  /*
+  filter: progid:DXImageTransform.Microsoft.Gradient(gradientType=0, startColorStr=#ffa7a7, endColorStr=#eb9999);
+  background: -ms-linear-gradient(top, #ffa7a7, #eb9999);
+  background: -moz-linear-gradient(top, #ffa7a7, #eb9999);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#ffa7a7), to(#eb9999));
+  background: -webkit-linear-gradient(top, #ffa7a7, #eb9999);
+  background: -o-linear-gradient(top, #ffa7a7, #eb9999);*/
+}

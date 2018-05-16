@@ -1,0 +1,49 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+{% load staticfiles %}
+
+{% block title %} {{ article.title }} {% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+<link rel="stylesheet" href="{% static 'health/css/policy_advisory_detail.css' %}">
+<style>
+    .intro-box,
+    .intro-title  {
+        padding: 0;
+    }
+    .intro-box .intro-content {
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+<!-- 主体部分 -->
+{% block banner %}
+    <div class="img">
+        <img src='{% static "health/images/banner-news.jpg" %}'>
+    </div>
+{% endblock %}
+
+{% block service-box %}
+<div class="nav_bar">
+</div>
+<div class="float main">
+    {% include "health/nav.html" %}
+    <div class="article">
+        <div class="title_box">
+            <div class="title">
+                <h3 align="center"><strong>{{ article.title }}</strong></h3>
+            </div>
+            <div class="dates">
+                <span class="date">时间：{{ article.pub_date }}</span></div>
+        </div>
+        <div class="intro">
+            <p><strong>{{ article.keywords }}</strong> </p>
+        </div>
+        <div class="article_details">
+            {{ article.content|safe }}
+        </div>
+    </div>
+</div>
+{% endblock %}

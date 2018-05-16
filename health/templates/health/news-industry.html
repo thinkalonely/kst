@@ -1,0 +1,83 @@
+<!-- 继承模板 base.html -->
+{% extends "health/base.html" %}
+{% load staticfiles %}
+
+{% block title %}新闻资讯{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'health/css/service_platform.css' %}">
+<link rel="stylesheet" href="{% static 'health/css/policy_advisory_list.css' %}">
+<style>
+    .intro-box,
+    .intro-title  {
+        padding: 0;
+    }
+    .intro-box .intro-content {
+        padding: 0;
+    }
+</style>
+{% endblock %}
+
+<!-- 主体部分 -->
+{% block banner %}
+    <div class="img">
+        <img src='{% static "health/images/banner-news.jpg" %}'>
+    </div>
+{% endblock %}
+
+{% block service-box %}
+<div class="nav_bar">
+</div>
+<div class="float main">
+    {% include "health/nav.html" %}
+    <div class="left list-box">
+        <div class="policy_advisory-box">
+            <!-- article list -->
+            {% for article in contacts %}
+            <div class="float policy_advisory-item">
+                <div class="left">
+                    <div class="policy_advisory-icon"><img src="{% static article.image %}" width="200" height="120" /></div>
+                </div>
+                <div class="left">
+                    <a href="{% url 'industry' article.id %}" target="_blank">
+                        <div class="policy_advisory-info">
+                            <div class="float policy_advisory-title">
+                                <div class="left policy_advisory-name">
+                                    <h3><strong>{{ article.title }}</strong></h3>
+                                 </div>
+                            </div>
+                            <div class="policy_advisory-desc">
+                                <p>{{ article.desc }}</p>
+                            </div>
+                            <div class="policy_advisory-date">
+                                <span>{{ article.pub_date }}</span>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="pagination">
+            <div class="industry-page">
+                <div class="page_control">
+                    <span class="step-links">
+                        {% if contacts.has_previous %}
+                        <a href="?page=1">&laquo; 首页</a>
+                        <a href="?page={{ contacts.previous_page_number }}">上一页</a>
+                        {% endif %}
+                        <span class="current">
+                            <a>第 {{ contacts.number }} 页 / 共 {{ contacts.paginator.num_pages }}页</a>
+                        </span>
+
+                        {% if contacts.has_next %}
+                            <a href="?page={{ contacts.next_page_number }}">下一页</a>
+                            <a href="?page={{ contacts.paginator.num_pages }}">末页</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
