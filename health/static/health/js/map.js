@@ -8,11 +8,11 @@ function initMap(){
 
 //创建地图函数：
 function createMap(){
-    var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
-    var point = new BMap.Point(104.057233,30.555261);//定义一个中心点坐标
-    map.centerAndZoom(point,14);//设定地图的中心点和坐标并将地图显示在地图容器中
-    window.map = map;//将map变量存储在全局
-}
+        var map = new BMap.Map("dituContent");//在百度地图容器中创建一个地图
+        var point = new BMap.Point(104.067734,30.547781);//定义一个中心点坐标
+        map.centerAndZoom(point,16);//设定地图的中心点和坐标并将地图显示在地图容器中
+        window.map = map;//将map变量存储在全局
+    }
 
 //地图事件设置函数：
 function setMapEvent(){
@@ -30,50 +30,50 @@ function addMapControl(){
 }
 
 //标注点数组
-var markerArr = [{title:"公司位置",content:"四川易讯通健康医疗技术有限公司<br/>成都市高新区益州大道1800号<br/>电话热线：027-87770007",point:"104.062443|30.545122",isOpen:0,icon:{w:23,h:25,l:69,t:21,x:9,lb:12}}
+var markerArr = [{title:"易迅通",content:"四川易迅通健康医疗技术有限公司<br/>成都市高新区益州大道1800号<br/>电话热线：027-87770007",point:"104.062443|30.545122",isOpen:0,icon:{w:23,h:25,l:69,t:21,x:9,lb:12}}
 ];
 //创建marker
 function addMarker(){
-    for(var i=0;i<markerArr.length;i++){
-        var json = markerArr[i];
-        var p0 = json.point.split("|")[0];
-        var p1 = json.point.split("|")[1];
-        var point = new BMap.Point(p0,p1);
-        var iconImg = createIcon(json.icon);
-        var marker = new BMap.Marker(point,{icon:iconImg});
-        var iw = createInfoWindow(i);
-        var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
-        marker.setLabel(label);
-        map.addOverlay(marker);
-        label.setStyle({
-            borderColor:"#808080",
-            color:"#333",
-            cursor:"pointer"
-        });
-
-        (function(){
-            var index = i;
-            var _iw = createInfoWindow(i);
-            var _marker = marker;
-            _marker.addEventListener("click",function(){
-                this.openInfoWindow(_iw);
+        for(var i=0;i<markerArr.length;i++){
+            var json = markerArr[i];
+            var p0 = json.point.split("|")[0];
+            var p1 = json.point.split("|")[1];
+            var point = new BMap.Point(p0,p1);
+			var iconImg = createIcon(json.icon);
+            var marker = new BMap.Marker(point,{icon:iconImg});
+			var iw = createInfoWindow(i);
+			var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+			marker.setLabel(label);
+            map.addOverlay(marker);
+            label.setStyle({
+                        borderColor:"#808080",
+                        color:"#333",
+                        cursor:"pointer"
             });
-            _iw.addEventListener("open",function(){
-                _marker.getLabel().hide();
-            })
-            _iw.addEventListener("close",function(){
-                _marker.getLabel().show();
-            })
-            label.addEventListener("click",function(){
-                _marker.openInfoWindow(_iw);
-            })
-            if(!!json.isOpen){
-                label.hide();
-                _marker.openInfoWindow(_iw);
-            }
-        })()
+
+			(function(){
+				var index = i;
+				var _iw = createInfoWindow(i);
+				var _marker = marker;
+				_marker.addEventListener("click",function(){
+				    this.openInfoWindow(_iw);
+			    });
+			    _iw.addEventListener("open",function(){
+				    _marker.getLabel().hide();
+			    })
+			    _iw.addEventListener("close",function(){
+				    _marker.getLabel().show();
+			    })
+				label.addEventListener("click",function(){
+				    _marker.openInfoWindow(_iw);
+			    })
+				if(!!json.isOpen){
+					label.hide();
+					_marker.openInfoWindow(_iw);
+				}
+			})()
+        }
     }
-}
 //创建InfoWindow
 function createInfoWindow(i){
     var json = markerArr[i];
@@ -82,7 +82,7 @@ function createInfoWindow(i){
 }
 //创建一个Icon
 function createIcon(json){
-    var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+    var icon = new BMap.Icon("../static/health/images/map_location_icon.png", new BMap.Size(json.w,json.h))
     return icon;
 }
 
