@@ -83,10 +83,9 @@ class IndustryView(generic.DetailView):
     template_name = 'health/industry.html'
 
 
-def contact(request):
-    contact_list = Contact.objects.all()
-    context = {'contact_list': contact_list, }
-    return render(request, 'health/contact.html', context)
+class ContactView(generic.ListView):
+    model = Contact
+    template_name = 'health/contact.html'
 
 
 def page_not_found(request):

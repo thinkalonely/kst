@@ -11,7 +11,7 @@ urlpatterns = [
     path('industry-news/', IndustryNewsView.as_view(), name='industry-news'),
     path('media/<int:pk>/', MediaView.as_view(), name='media'),
     path('industry/<int:pk>/', IndustryView.as_view(), name='industry'),
-    path('contact/', contact, name='contact'),
+    path('contact/', ContactView.as_view(), name='contact'),
 ]
 
 handler403 = permission_denied
