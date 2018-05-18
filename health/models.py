@@ -22,6 +22,7 @@ class Industry(models.Model):
     desc = models.TextField('摘要', max_length=120, default='')
     content = RichTextField('内容')
     pub_date = models.DateField('发布日期')
+    ordering = ['-pub_date']
 
     def __str__(self):
         return self.title
@@ -33,7 +34,7 @@ class Contact(models.Model):
     contact_email = models.EmailField('公司邮箱')
     zip_code = models.IntegerField('邮政编码')
     contact_address = models.CharField('公司地址', max_length=50)
-
+    ordering = ['-pub_date']
     # def __str__(self):
     #    return self.name
 

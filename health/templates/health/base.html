@@ -30,11 +30,11 @@
             </div>
             <div class="right">
                 <div class="nav-menu">
-                    <a href="/" ><strong>首页</strong></a>
-                    <a href="/doctor"><strong>家庭医生</strong></a>
-                    <a href="/pension"><strong>医养结合</strong></a>
-                    <a href="/news"><strong>新闻资讯</strong></a>
-                    <a href="/contact"><strong>联系我们</strong></a>
+                    <a href="{% url 'health:index' %}" ><strong>首页</strong></a>
+                    <a href="{% url 'health:doctor' %}"><strong>家庭医生</strong></a>
+                    <a href="{% url 'health:pension' %}"><strong>医养结合</strong></a>
+                    <a href="{% url 'health:news' %}"><strong>新闻资讯</strong></a>
+                    <a href="{% url 'health:contact' %}"><strong>联系我们</strong></a>
                 </div>
             </div>
         </div>

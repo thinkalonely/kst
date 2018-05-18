@@ -3,42 +3,46 @@
   overflow: hidden;
   font-family: "Microsoft YaHei", sans-serif;
 }
-/*----- nav ------*/
+/*-----.main ------*/
 .content .nav_bar {
   height: 50px;
   background: #f3f8fb;
 }
- .nav {
+ .main {
   width: 1200px;
   margin: auto;
   position: relative;
 }
- .nav .wrap {
+ .main .wrap {
 	width: 200px;
 	border: 1px solid #dadada;
-	position: absolute;
-	top: 50px;
 	-webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
 	-moz-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
 	box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
- .nav .nav_top {
+ .main .nav_top {
   width: 200px;
   height: 20px;
-  position: absolute;
-  top: -10px;
+  position:relative;
+  top:-10px;
   background: url("../images/zhengcezixunxiangqing_01.png");
 }
- .nav .nav_menu {
+ .main .nav_menu {
   width: 180px;
+  height:50px;
   background: #ffffff;
-  padding: 20px 10px 10px 10px;
   border-bottom: 1px dashed #999999;
 }
- .nav ul {
+ .main .menu1 {
+     padding: 0 10px 10px 10px;
+ }
+ .main .menu2 {
+     padding: 10px 10px 10px 10px;
+ }
+ .main ul {
   list-style: none;
 }
-.nav a {
+.wrap a {
   display: block;
   padding: 0 0 0 24px;
   height: 50px;
@@ -46,25 +50,25 @@
   text-decoration: none;
   color: #333333;
 }
-.nav  a.hover,
-.nav  a:hover {
+.wrap  a.hover,
+.wrap  a:hover {
 	color: #fff;
 	background-color: #325EB7;
 }
- .nav .nav_bottom {
+ .main .nav_bottom {
   padding: 25px 10px 10px 10px;
 }
- .nav .icon {
+ .main .icon {
 	display: inline-block;
 	width: 19px;
 	height: 18px;
 	background: url("../images/zhengcezixunxiangqing_02.png") no-repeat;
 	padding: 0 5px 0 0;
 }
- .nav .phone_number {
+ .main .phone_number {
 	padding: 10px 0 0 24px;
 }
-.nav .nav_bottom div .icon-1 {
+.main .nav_bottom div .icon-1 {
 	background: url("../images/logo-yizongguan.png")
 	no-repeat;
 	display: inline-block;
@@ -72,11 +76,11 @@
 	width: 19px;
 	padding: 0 5px 0 0;
 }
-.nav .nav_bottom .fuwurexian {
+.main .nav_bottom .fuwurexian {
 	border: 2px solid #CCC;
 }
 
-.nav .nav_bottom .yizongguan {
+.main .nav_bottom .yizongguan {
 	border-bottom-width: 1px;
 	border-bottom-style: dashed;
 	border-bottom-color: #CCC;
@@ -87,7 +91,7 @@
 	padding-bottom: 10px;
 	padding-left: 0px;
 }
-.nav .nav_bottom .yizongguan-1 {
+.main .nav_bottom .yizongguan-1 {
 	height: 68px;
 	padding-top: 10px;
 	padding-right: 0px;
@@ -97,9 +101,8 @@
 /*----- article-lists -----*/
  .list-box {
 	margin: 0 auto;
-    height: 760px;
 	width: 965px;
-	padding: 0 0 0 235px;
+	padding: 0 0 0 30px;
 }
 .list-box .policy_advisory-box {
   padding: 20px 0 0 0;
@@ -147,7 +150,7 @@
 /*----- pagination ------*/
 .industry-page {
 
-	padding: 30px 0px 20px 0px;
+	padding: 20px 0px 20px 0px;
 }
 .page_control {
     text-align: right;

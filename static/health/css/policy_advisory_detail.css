@@ -1,42 +1,45 @@
 ﻿.rukou{color: #ffffff;}
-.content .main {
-  overflow: hidden;
-  font-family: "Microsoft YaHei", sans-serif;
-}
-.content .main .nav_bar {
+
+.content .nav_bar {
 	height: 20px;
 	background: #f4f4f4;
 }
-.content .main .nav_bar .nav {
+.main {
   width: 1200px;
   margin: auto;
-}
-.content .main .nav_bar .nav .wrap {
-  width: 200px;
-  float: left;
-  margin: 20px 0 0 0;
-  border-bottom: 1px solid #ccc;
-  border-left: 1px solid #ccc;
-  border-right: 1px solid #ccc;
   position: relative;
 }
-.content .main .nav_bar .nav .wrap .nav_top {
+/*--------- wrap -------------*/
+ .main .wrap {
 	width: 200px;
-	height: 20px;
-	position: absolute;
-	top: -10px;
-	background: url("../images/zhengcezixunxiangqing_01.png");
+	border: 1px solid #dadada;
+	-webkit-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+	-moz-box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
+	box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.1);
 }
-.content .main .nav_bar .nav .wrap .nav_menu {
+ .main .nav_top {
+  width: 200px;
+  height: 20px;
+  position:relative;
+  top:-10px;
+  background: url("../images/zhengcezixunxiangqing_01.png");
+}
+ .main .nav_menu {
   width: 180px;
+  height:50px;
   background: #ffffff;
-  padding: 20px 10px 10px 10px;
   border-bottom: 1px dashed #999999;
 }
-.content .main .nav_bar .nav .wrap .nav_menu ul {
+ .main .menu1 {
+     padding: 0 10px 10px 10px;
+ }
+ .main .menu2 {
+     padding: 10px 10px 10px 10px;
+ }
+ .main ul {
   list-style: none;
 }
-.content .main .nav_bar .nav .wrap .nav_menu ul li a {
+.wrap a {
   display: block;
   padding: 0 0 0 24px;
   height: 50px;
@@ -44,24 +47,55 @@
   text-decoration: none;
   color: #333333;
 }
-.content .main .nav_bar .nav .wrap .nav_menu ul li a.hover,
-.content .main .nav_bar .nav .wrap .nav_menu ul li a:hover {
+.wrap  a.hover,
+.wrap  a:hover {
 	color: #fff;
-	background-color: #3460B9;
+	background-color: #325EB7;
 }
-.content .main .nav_bar .nav .wrap .nav_bottom {
+ .main .nav_bottom {
   padding: 25px 10px 10px 10px;
 }
-.content .main .nav_bar .nav .wrap .nav_bottom .icon {
-  display: inline-block;
-  width: 19px;
-  height: 18px;
-  background: url("../images/zhengcezixunxiangqing_02.png") no-repeat;
-  padding: 0 5px 0 0;
+ .main .icon {
+	display: inline-block;
+	width: 19px;
+	height: 18px;
+	background: url("../images/zhengcezixunxiangqing_02.png") no-repeat;
+	padding: 0 5px 0 0;
 }
-.content .main .nav_bar .nav .wrap .nav_bottom .phone_number {
-  padding: 13px 0 0 24px;
+ .main .phone_number {
+	padding: 10px 0 0 24px;
 }
+.main .nav_bottom div .icon-1 {
+	background: url("../images/logo-yizongguan.png")
+	no-repeat;
+	display: inline-block;
+	height: 18px;
+	width: 19px;
+	padding: 0 5px 0 0;
+}
+.main .nav_bottom .fuwurexian {
+	border: 2px solid #CCC;
+}
+
+.main .nav_bottom .yizongguan {
+	border-bottom-width: 1px;
+	border-bottom-style: dashed;
+	border-bottom-color: #CCC;
+	/* [disabled]margin: 8px; */
+	height: auto;
+	padding-top: 0px;
+	padding-right: 0px;
+	padding-bottom: 10px;
+	padding-left: 0px;
+}
+.main .nav_bottom .yizongguan-1 {
+	height: 68px;
+	padding-top: 10px;
+	padding-right: 0px;
+	padding-bottom: 0px;
+	padding-left: 0px;
+}
+/*--------- article detail ------------*/
 .content .main .article {
   margin: 0 auto;
   width: 965px;

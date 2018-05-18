@@ -1,11 +1,4 @@
 .rukou{color: #ffffff;}
-.msg_box_left .main {
-  width: 950px;
-  height: 400px;
-  padding: 0 180px;
-  margin: 0 auto;
-  overflow: hidden;
-}
 .msg_box_left .main .words {
   width: 300px;
   margin: 50px 40px 50px 70px;
@@ -56,11 +49,6 @@
   width: 200px;
   padding: 0 0 0 50px;
 }
-.msg_box_right .main .words .msg ul li {
-  padding: 0 0 0 45px;
-  text-align: left;
-  list-style-image: url("../images/fuwupingtai_list_img.png");
-}
 .msg_box_right .main .images {
   margin: 50px 0 60px 0;
 }
@@ -101,7 +89,17 @@
 /*公用样式*/
 .w1200{width: 1200px; margin: 0 auto; overflow: hidden;}
 .title1{text-align: center; margin-top: 35px;}
-a.more{display: block; width: 100px; height: 35px; line-height: 35px; text-align: center; background: #22b9a6; color: #fff; font-size: 14px; margin: 0 auto;}
+a.more{
+  display: block;
+  width: 100px;
+  height: 35px;
+  line-height: 35px;
+  text-align: center;
+  background: #22b9a6;
+  color: #fff;
+  font-size: 14px;
+  margin: 0 auto;
+}
 /*公用样式*/
 
 /*新闻*/
@@ -112,29 +110,27 @@ a.more{display: block; width: 100px; height: 35px; line-height: 35px; text-align
   padding: 40px 0;
 }
 .news .con{margin-top: 30px;}
-
-.news .hot{float: left; width: 570px; overflow: hidden; font-size: 14px; }
+.news .hot{float: left; overflow: hidden; font-size: 14px; }
 .news .hot dt{}
 .news .hot dd{}
 .news .hot dd a{font-size: 22px; white-space: nowrap; overflow: hidden;}
 .news .hot dd a:hover{color: #f45b39;}
 .news .hot span{color: #999;}
 .news .hot p{color: #666; margin: 5px 0 0;}
-
-.news ul {margin-top: 0; overflow: hidden; width: 590px; margin-right: 10px; float:right;}
-
-.news .news-list .text { width: 490px; float: right;}
-
+.news ul {
+  padding-top:50px;
+  margin-top: 0;
+  overflow: hidden;
+  float:right;
+}
+.news .news-list .text { width: 380px; float: right;}
 .news .news-list li{overflow: hidden; border-top: 1px dashed #d4d4d4; padding-top: 20px; margin-top: 20px;}
 .news .news-list li:first-child{border: 0; margin-top: 0; padding-top: 0;}
 .news .news-list .date{width: 80px; height: 80px; float: left; background: #eee; text-align: center; color: #999;}
 .news .news-list .date span{display: block; font-size: 48px; height: 62px; margin-top: -6px;}
-
-.news .news-list .text{width: 480px; float: right; margin-right: 10px;}
 .news .news-list .text a{font-size: 18px;}
 .news .news-list .text a:hover{color: #f45b39;}
 .news .news-list .text p{font-size: 14px; color: #666;}
-
 .news .more{float: left; margin-top: 27px; background: #fff; color: #666; border: 1px solid #ccc;}
 .news .more:hover{color: #fff; background: #22b9a6;}
 .title5{
