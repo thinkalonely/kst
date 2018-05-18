@@ -7,10 +7,10 @@ urlpatterns = [
     path('', index, name='index'),
     path('doctor/', doctor, name='doctor'),
     path('pension/', pension, name='pension'),
-    path('news/', news, name='news'),
-    path('industry-news/', industry_news, name='industry-news'),
-    path('media/<int:article_id>/', media, name='media'),
-    path('industry/<int:industry_id>/', industry, name='industry'),
+    path('news/', NewsView.as_view(), name='news'),
+    path('industry-news/', IndustryNewsView.as_view(), name='industry-news'),
+    path('media/<int:pk>/', MediaView.as_view(), name='media'),
+    path('industry/<int:pk>/', IndustryView.as_view(), name='industry'),
     path('contact/', contact, name='contact'),
 ]
 

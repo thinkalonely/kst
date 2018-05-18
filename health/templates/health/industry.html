@@ -33,16 +33,16 @@
     <div class="article">
         <div class="title_box">
             <div class="title">
-                <h3 align="center">{{ article.title }}</strong></h3>
+                <h3 align="center"><strong>{{ industry.title }}</strong></h3>
             </div>
             <div class="dates">
-                <span class="date">时间：{{ article.pub_date }}</span></div>
+                <span class="date">时间：{{ industry.pub_date }}</span></div>
         </div>
         <div class="intro">
-            <p><strong>{{ article.keywords }}</strong> </p>
+            <p><strong>{{ industry.keywords }}</strong> </p>
         </div>
         <div class="article_details">
-            {{ article.content|safe }}
+            {{ industry.content|safe }}
         </div>
     </div>
 </div>

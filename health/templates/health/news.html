@@ -33,7 +33,7 @@
     <div class="left list-box">
         <div class="policy_advisory-box">
             <!-- article list -->
-            {% for article in contacts %}
+            {% for article in article_list %}
             <div class="float policy_advisory-item">
                 <div class="left">
                     <div class="policy_advisory-icon"><img src="{% static article.image %}" width="200" height="120" /></div>
@@ -61,8 +61,8 @@
         <div class="pagination">
             <div class="industry-page">
                 <div class="page_control">
-                    <span class="step-links">
-                        {% if contacts.has_previous %}
+                    <!--span class="step-links">
+                        <{% if contacts.has_previous %}
                         <a href="?page=1">&laquo; 首页</a>
                         <a href="?page={{ contacts.previous_page_number }}">上一页</a>
                         {% endif %}
@@ -73,6 +73,26 @@
                         {% if contacts.has_next %}
                             <a href="?page={{ contacts.next_page_number }}">下一页</a>
                             <a href="?page={{ contacts.paginator.num_pages }}">末页</a>
+                        {% endif %}
+                    </span -->
+                    <span class="step-links">
+                        {% if is_paginated %}
+                        <div class="pagination-simple">
+                          <!-- 如果当前页还有上一页，显示一个上一页的按钮 -->
+                          {% if page_obj.has_previous %}
+                            <a href="?page=1">&laquo; 首页</a>
+                            <a href="?page={{ page_obj.previous_page_number }}">上一页</a>
+                          {% endif %}
+                          <!-- 显示当前页面信息 -->
+                          <span class="current">
+                              <a>第 {{ page_obj.number }} 页 / 共 {{ paginator.num_pages }} 页</a>
+                          </span>
+                          <!-- 如果当前页还有下一页，显示一个下一页的按钮 -->
+                          {% if page_obj.has_next %}
+                            <a href="?page={{ page_obj.next_page_number }}">下一页</a>
+                            <a href="?page={{ page_obj.paginator.num_pages }}">末页</a>
+                          {% endif %}
+                        </div>
                         {% endif %}
                     </span>
                 </div>

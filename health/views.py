@@ -1,8 +1,6 @@
 from django.shortcuts import render
-from django.http import Http404
 from .models import Provide, Article, Contact, Service, People, Advantage, Industry
-from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-
+from django.views import generic
 # Create your views here.
 
 
@@ -31,9 +29,15 @@ def pension(request):
     return render(request, 'health/pension.html')
 
 
-def news(request):
-    article_list = Article.objects.all()
-    paginator = Paginator(article_list, 4)
+class NewsView(generic.ListView):
+    template_name = 'health/news.html'
+    context_object_name = 'article_list'
+    paginate_by = 4
+
+    def get_queryset(self):
+        return Article.objects.order_by('-pub_date')
+    '''
+    paginator = Paginator(get_queryset, 4)
 
     page = request.GET.get('page')
     # contacts = paginator.get_page(page)
@@ -45,29 +49,23 @@ def news(request):
     except EmptyPage:
         # 如果用户请求的页码号超过了最大页码号，显示最后一页
         contacts = paginator.page(paginator.num_pages)
-
-    return render(request, 'health/news.html', {'contacts': contacts, })
-
-
-def industry_news(request):
-    industry_list = Industry.objects.all()
-    paginator = Paginator(industry_list, 4)
-
-    page = request.GET.get('page')
-    # contacts = paginator.get_page(page)
-    try:
-        contacts = paginator.page(page)
-    except PageNotAnInteger:
-        # 如果用户请求的页码号不是整数，显示第一页
-        contacts = paginator.page(1)
-    except EmptyPage:
-        # 如果用户请求的页码号超过了最大页码号，显示最后一页
-        contacts = paginator.page(paginator.num_pages)
-
-    return render(request, 'health/news-industry.html', {'contacts': contacts, })
+    '''
+    # return render(request, 'health/news.html', {'contacts': contacts, })
 
 
-def media(request, article_id):
+class IndustryNewsView(generic.ListView):
+    template_name = 'health/news-industry.html'
+    context_object_name = 'article_list'
+    paginate_by = 4
+
+    def get_queryset(self):
+        return Industry.objects.order_by('-pub_date')
+
+
+class MediaView(generic.DetailView):
+    model = Article
+    template_name = 'health/media.html'
+    '''
     try:
         article = Article.objects.get(pk=article_id)
     except Article.DoesNotExist:
@@ -77,17 +75,12 @@ def media(request, article_id):
         'article': article,
     }
     return render(request, 'health/media.html', context)
+    '''
 
 
-def industry(request, industry_id):
-    try:
-        article = Industry.objects.get(pk=industry_id)
-    except Industry.DoesNotExist:
-        raise Http404("404")
-    context = {
-        'article': article,
-    }
-    return render(request, 'health/industry.html', context)
+class IndustryView(generic.DetailView):
+    model = Industry
+    template_name = 'health/industry.html'
 
 
 def contact(request):
